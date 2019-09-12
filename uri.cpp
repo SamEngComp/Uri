@@ -80,3 +80,39 @@ cout << endl;
 
     return 0;
 }
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main(){
+
+    short int x, y, n;
+    do{
+        cin >> x >> y >> n;
+        if(!(x==0 && y==0 && n==0)){
+            int total = x * y;
+            short int i, x1[n], y1[n], x2[n], y2[n];
+            int auxL, auxC;
+            for(i=0;i<n;i++)
+                cin >> x1[i] >> y1[i] >> x2[i] >> y2[i];
+            
+            for(i=0;i<n;i++){
+                
+                if(x1 == x2) auxL = 1;
+                else if(x1 > x2) auxL = x1 - x2 +1;
+                else auxL = x2 - x1 + 1;
+
+                if(y1 == y2) auxC = 1;
+                else if(y1 > y2) auxC = y1 - y2 +1;
+                else auxC = y2 - y1 +1;
+
+                total -= (auxL * auxC);
+            }
+            cout << total << endl;
+        }
+    }while(!(x==0 && y==0 && n==0));
+
+    return 0;
+}
+
