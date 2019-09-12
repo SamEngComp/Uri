@@ -115,4 +115,7 @@ int main(){
 
     return 0;
 }
+ if(x1 == x2) auxL = 1;
+                else if(x1 > x2) auxL = x1 - x2 +1;
+                else auxL = x2 - x1 + 1;
 
