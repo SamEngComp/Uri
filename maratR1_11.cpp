@@ -63,3 +63,43 @@ int main()
     
     return 0;
 }
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    long int n;
+    cin >> n;
+
+    long int i, aux, o, ant;
+    int t = 0;
+    aux = 3;
+    i = 3;
+    o = 0;
+    ant = 2;
+    while(t == 0){
+
+        aux += ant;
+        o +=(aux - i-1);
+        if(o == n){
+            cout << "aqui1\n";
+            cout << (i+o) << endl;
+            return 0;
+        }else if(o > n){
+            cout << "aqui2\n" << o << i << endl;
+            cout << (i+(o-n)) << endl;
+            return 0;
+        }
+        ant = aux;
+        i = aux;
+    }
+
+    return 0;
+}
