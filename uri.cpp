@@ -82,40 +82,49 @@ cout << endl;
 }
 #include <iostream>
 #include <stdio.h>
-
+#include <algorithm>
 using namespace std;
 
 int main(){
 
-    short int x, y, n;
+    short int g, p, i, j, s, aux, o, k;
     do{
-        cin >> x >> y >> n;
-        if(!(x==0 && y==0 && n==0)){
-            int total = x * y;
-            short int i, x1[n], y1[n], x2[n], y2[n];
-            int auxL, auxC;
-            for(i=0;i<n;i++)
-                cin >> x1[i] >> y1[i] >> x2[i] >> y2[i];
-            
-            for(i=0;i<n;i++){
-                
-                if(x1 == x2) auxL = 1;
-                else if(x1 > x2) auxL = x1 - x2 +1;
-                else auxL = x2 - x1 + 1;
+        cin >> g >> p;
+        if(!(g == 0 && p == 0)){
+            short int m[g][p], v[p];
+            for(j=0;j<p;j++) v[j] = 0;
 
-                if(y1 == y2) auxC = 1;
-                else if(y1 > y2) auxC = y1 - y2 +1;
-                else auxC = y2 - y1 +1;
-
-                total -= (auxL * auxC);
+            for(i=0;i<g;i++){
+                for(j=0;j<p;j++) cin >> m[i][j];
             }
-            cout << total << endl;
+            cin >> s;
+            short int t;
+            for(o=0;o<s;o++){
+                cin >> t;
+                for(k=0; k<t; k++){
+                    cin >> aux;
+                    for(i=0;i<g;i++){
+                            v[m[i][k]-1] += aux;
+                    }
+                }
+            }
+            short int maior = v[0];
+            for(j=0;j<p;j++){
+                if(maior < v[j]) maior = v[j];
+            }
+            short int en = 0;
+            for(j=0;j<p;j++){
+                if(maior == v[j]) {
+                    if(en == 1){
+                        cout << " ";
+                    }
+                    cout << j;
+                    en=1;
+                }
+            }
+            cout << endl;
         }
-    }while(!(x==0 && y==0 && n==0));
+    }while(!(g == 0 && p == 0));
 
     return 0;
 }
- if(x1 == x2) auxL = 1;
-                else if(x1 > x2) auxL = x1 - x2 +1;
-                else auxL = x2 - x1 + 1;
-
