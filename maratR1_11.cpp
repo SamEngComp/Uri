@@ -171,3 +171,45 @@ int main(){
     return 0;
 }
 
+
+#include <stdio.h>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+
+int main(){
+    short int t1, t2, t3, t4, i;
+    char l;
+    char l1[] = "`1234567890-=";
+    char l2[] = "QWERTYUIOP[]\\";
+    char l3[] = "ASDFGHJKL;'";
+    char l4[] = "ZXCVBNM,./";
+    while(scanf("%c", &l) != EOF){
+        if(l != ' '){
+            t1 = strlen(l1);
+            t2 = strlen(l2);
+            t3 = strlen(l3);
+            t4 = strlen(l4);
+            for(i=1;i<t1;i++){
+                if(l == l1[i]) cout << l1[i-1];
+            }
+            for(i=1;i<t2;i++){
+                if(l == l2[i]) cout << l2[i-1];
+            }
+            for(i=1;i<t3;i++){
+                if(l == l3[i]) cout << l3[i-1];
+            }
+            for(i=1;i<t4;i++){
+                if(l == l4[i]) cout << l4[i-1];
+            }
+        }else if(l == ' '){
+            cout << " ";
+        }
+
+    }
+
+    return 0;
+}
+
