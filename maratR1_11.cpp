@@ -103,3 +103,71 @@ int main(){
 
     return 0;
 }
+
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+typedef struct ponto {
+    char l;
+    char c;
+} Po;
+
+int main(){
+
+    Po pos[9], cav[8], peos[16];
+    short int i, o;
+    for(i=0;i<9;i++){
+        cin >> pos[i].l;
+        if(pos[i].l == '0') return 0;
+        cin >> pos[i].c;
+    }
+
+    short int linha = pos[0].l - '0';
+    o = 0;
+    cav[o].l = (linha+2) + '0';
+    cav[o].c = pos[0].c + 1;
+    o++;
+    cav[o].l = (linha+2) + '0';
+    cav[o].c = pos[0].c - 1;
+    o++;
+    cav[o].l = (linha-2) + '0';
+    cav[o].c = pos[0].c + 1;
+    o++;
+    cav[o].l = (linha-2) + '0';
+    cav[o].c = pos[0].c - 1;
+    o++;
+    cav[o].l = (linha+1) + '0';
+    cav[o].c = pos[0].c + 2;
+    o++;
+    cav[o].l = (linha-1) + '0';
+    cav[o].c = pos[0].c + 2;
+    o++;
+    cav[o].l = (linha+1) + '0';
+    cav[o].c = pos[0].c - 2;
+    o++;
+    cav[o].l = (linha-1) + '0';
+    cav[o].c = pos[0].c - 2;
+    o++;
+
+    short int j, k = 0;
+    for(i=0;i<16;i++){
+        peos[i].l = pos[k].l + 1;
+        peos[i].c = pos[k].c + 1;
+        i++;
+        peos[i].l = pos[k].l + 1;
+        peos[i].c = pos[k].c - 1;
+        k++;
+    }
+
+    for(i=0;i<o;i++){
+        for(j=0;j<16;j++){
+            if(cav[i].c == peos[j].c){
+                
+            }
+        }
+    }
+    return 0;
+}
+
