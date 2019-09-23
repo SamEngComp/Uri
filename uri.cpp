@@ -128,3 +128,46 @@ int main(){
 
     return 0;
 }
+
+
+
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+
+using namespace std;
+
+int main(){
+
+    long int n, m, v[9];
+    long int aux[8];
+    short int i;
+    aux[0] = 1; // 1 - 9
+    aux[1] = 20; // 1 - 99
+    aux[2] = 300; // 1 - 999
+    aux[3] = 4000; // 1 - 9999
+    aux[4] = 50000; // 1 - 99999
+    aux[5] = 600000; // 1 - 999999
+    aux[6] = 7000000; // 1 - 9999999
+    aux[7] = 80000000; // 1 - 99999999
+    for(i=0;i<9;i++) v[i] = 0;
+    do{
+        cin >> n >> m;
+        if(!(n == 0 && m == 0)){
+
+            short int tN, tM, a;
+            tN = log10(n) + 1;
+            tM = log10(m) + 1;
+            
+            long int teste = n;
+            a = tN;
+            while(teste <= m){
+                
+                if(n>)
+                
+            }
+        }
+    }while(!(n == 0 && m == 0));
+
+    return 0;
+}
